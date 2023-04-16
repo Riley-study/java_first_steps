@@ -14,7 +14,6 @@ public class HW01_task5 {
 
         int[] array = RandomArray(10, 1, 30);
         System.out.println(Arrays.toString(array));
-
         int shiftNumber = -3;
         if (shiftNumber >= 0) {
             int[] shiftArray = ShiftArrayRight(array, shiftNumber);
