@@ -11,7 +11,7 @@ public class HW02_task2 {
     //    3 Расширение файла:
     //    4 Расширение файла: jpg
     public static void main(String[] args) throws FileNotFoundException {
-        File file = new File("C:\\Users\\user\\Desktop\\GeekBrains\\Java\\java_first_steps\\lesson_001\\src\\main\\resources\\files");
+        File file = new File("C:\\Users\\user\\Desktop\\GeekBrains\\Java\\java_first_steps\\homework02\\src\\main\\java\\org\\example");
         StringBuilder sb = new StringBuilder();
         for (String fileName : Objects.requireNonNull(file.list())){
             String str = fileName;
