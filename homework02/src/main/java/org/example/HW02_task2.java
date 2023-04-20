@@ -16,9 +16,8 @@ public class HW02_task2 {
         for (String fileName : Objects.requireNonNull(file.list())){
             String str = fileName;
             String[] subStr;
-            String delimeter = "\\."; // Разделитель
-            subStr = str.split(delimeter); // Разделения строки str с помощью метода split()
-            // Вывод результата на экран
+            String delimeter = "\\.";
+            subStr = str.split(delimeter);
             for(int i = 0; i < subStr.length; i++) {
                 if (i == subStr.length -1){
                     System.out.println("Расширение файла: " + subStr[i]);
