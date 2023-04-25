@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class HW03_task1 {
@@ -8,17 +9,14 @@ public class HW03_task1 {
     public static void main(String[] args) {
 //        Первоначальный набор элементов
         String[] listOfNumbersAndTextInit = {"Яблоко", "11", "13", "Апельсин", "Дыня", "17"};
-        List<String> listOfNumbersAndText = new ArrayList<String>();
-
 //        Формируем список типа ArrayList<String> и помещаем в него все заданные элементы
-        List<String> listOfTextOnly = new ArrayList<String>();
-        for (int i = 0; i < listOfNumbersAndTextInit.length; i++) {
-            listOfNumbersAndText.add(listOfNumbersAndTextInit[i]);
-        }
+        List<String> listOfNumbersAndText = Arrays.asList(listOfNumbersAndTextInit);
 
-//        Проверяем каждый элемент списка, если он не является числом, то добавляется в новый список
-        for (int i = 0; i < listOfNumbersAndTextInit.length; i++) {
-            String temp = listOfNumbersAndTextInit[i];
+        List<String> listOfTextOnly = new ArrayList<String>();
+
+//        Проверяем каждый элемент списка, если он не является числом (ошибка), то добавляется в новый список
+        for (int i = 0; i < listOfNumbersAndText.size(); i++) {
+            String temp = listOfNumbersAndText.get(i);
             try {
                 int number = Integer.parseInt(temp);
             } catch (NumberFormatException ex) {
