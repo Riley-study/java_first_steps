@@ -1,11 +1,15 @@
 package lesson1;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+
 public class seminar2 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
 //        ex1();
 //        ex2();
 //        ex2_1();
-        ex5();
+        ex5("C:\\Users\\user\\Desktop\\GeekBrains\\Java\\java_first_steps\\lesson_001");
     }
 
 
@@ -69,12 +73,33 @@ public class seminar2 {
             System.out.println(result);
 
     }
-    private static void ex5() {
-        // Напишите метод, который вернет содержимое текущей папки в виде массива строк.
-        //Напишите метод, который запишет массив, возвращенный предыдущим методом в файл.
-        //Обработайте ошибки с помощью try-catch конструкции. В случае возникновения исключения,
-        // оно должно записаться в лог-файл.
+
+    // Напишите метод, который вернет содержимое текущей папки в виде массива строк.
+    //Напишите метод, который запишет массив, возвращенный предыдущим методом в файл.
+    //Обработайте ошибки с помощью try-catch конструкции. В случае возникновения исключения,
+    // оно должно записаться в лог-файл.
+
+    private static void ex5(String pahtDir) throws FileNotFoundException {
+        File file = new File(pahtDir);
+        String[] dirListNames = file.list();
+        StringBuilder sb = new StringBuilder();
+        for (String fileName : dirListNames){
+            sb.append(fileName).append(System.lineSeparator());
+        }
+        System.out.println(sb);
+
+        if(!(file.exists() || file.isDirectory())){
+            return;
+        }
+        try {
+            try (PrintWriter pw = new PrintWriter("lesson_001/src/main/resources/files/listNames.txt")) {
+                pw.print(sb);
+            }
+        } catch (FileNotFoundException e){
+            throw new FileNotFoundException();
+        }
+
+        }
 
 
     }
-}

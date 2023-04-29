@@ -58,5 +58,6 @@ public class seminar3 {
                 System.out.print(listPlanet.get(j) + " ");
             }
         }
+
     }
 }
