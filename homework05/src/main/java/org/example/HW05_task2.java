@@ -40,7 +40,7 @@ public class HW05_task2 {
 
         System.out.println("\nПовторяющиеся имена с количеством повторений по убыванию популярности: ");
 
-        Integer count = namesCountMap.size();
+        Integer count = namesListMap.size();
         while (count > 0) {
             for (String name : namesCountMap.keySet()) {
                 if(namesCountMap.get(name) == count) {
