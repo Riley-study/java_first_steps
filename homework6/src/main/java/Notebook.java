@@ -1,5 +1,3 @@
-package org.example;
-
 import java.util.Objects;
 
 public class Notebook {
@@ -7,21 +5,22 @@ public class Notebook {
     int hardDriveCapacity;
     String operatingSystem;
     String color;
-    int noteId;
+    int noteID;
 
-    public Notebook(int noteId, String operatingSystem, int randomAccessMemory, int hardDriveCapacity, String color) {
+    public Notebook(int noteID, String operatingSystem, int randomAccessMemory, int hardDriveCapacity, String color) {
         this.randomAccessMemory = randomAccessMemory;
         this.hardDriveCapacity = hardDriveCapacity;
         this.operatingSystem = operatingSystem;
         this.color = color;
-        this.noteId = noteId;
+        this.noteID = noteID;
     }
 
     @Override
     public String toString() {
         StringBuilder noteToPrint = new StringBuilder();
-        noteToPrint.append("(Notebook ID ").append(noteId).append(" - ").append(operatingSystem).append(" ").append(randomAccessMemory).append(" Гб, ")
-                .append(hardDriveCapacity).append(" Гб, ").append(color).append(")");
+        noteToPrint.append("\n(Notebook ID ").append(noteID).append(" - ").append(operatingSystem).append(" ")
+                .append(randomAccessMemory).append(" Гб, ").append(hardDriveCapacity).append(" Гб, ")
+                .append(color).append(")");
         return noteToPrint.toString();
     }
 
@@ -39,7 +38,7 @@ public class Notebook {
             return false;
         }
         Notebook temp = (Notebook) obj;
-        return temp.color == this.color && temp.hardDriveCapacity == this.hardDriveCapacity && temp.noteId == this.noteId
+        return temp.color == this.color && temp.hardDriveCapacity == this.hardDriveCapacity && temp.noteID == this.noteID
                && temp.operatingSystem == this.operatingSystem && temp.randomAccessMemory == this.randomAccessMemory;
     }
 }
