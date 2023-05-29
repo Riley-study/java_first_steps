@@ -30,7 +30,12 @@ public class DrinksVendingMachine {
     public Drinks saleDrink (String name){
         for (Drinks drink: drinksMenu) {
             if(drink.getDrinkName().contains(name)){
-                drinksMenu.remove(drink);
+                int newQuantity = drink.getQuantity()-1;
+                if (newQuantity<1){
+                    drinksMenu.remove(drink);
+                } else {
+                    drink.setQuantity(newQuantity);
+                }
                 cash = cash + drink.getDrinkPrice();
                 return drink;
             }
