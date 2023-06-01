@@ -1,8 +1,9 @@
 package terrarium.inhabitants;
 
 import terrarium.AttackSpeed;
+import terrarium.TongueLength;
 
-public class Chameleon extends Reptiles implements AttackSpeed {
+public class Chameleon extends Reptiles implements AttackSpeed, TongueLength {
     public Chameleon(String name) {
         super(name);
     }
@@ -18,11 +19,17 @@ public class Chameleon extends Reptiles implements AttackSpeed {
     }
     @Override
     public String toString() {
-        return String.format("Chameleon: %s, feed: %s, color: %s, attack speed: %d", name, feed(), color(), getAttackSpeed());
+        return String.format("Chameleon: %s, feed: %s, color: %s, attack speed: %d, tongue length: %f", name, feed(),
+                color(), getAttackSpeed(), getTongueLenght());
     }
 
     @Override
     public int getAttackSpeed() {
         return 25;
+    }
+
+    @Override
+    public double getTongueLenght() {
+        return 0.3;
     }
 }

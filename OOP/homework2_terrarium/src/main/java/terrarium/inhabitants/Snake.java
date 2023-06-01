@@ -1,8 +1,9 @@
 package terrarium.inhabitants;
 
 import terrarium.AttackSpeed;
+import terrarium.TongueLength;
 
-public class Snake extends Reptiles implements AttackSpeed {
+public class Snake extends Reptiles implements AttackSpeed, TongueLength {
     public Snake(String name) {
         super(name);
     }
@@ -24,6 +25,12 @@ public class Snake extends Reptiles implements AttackSpeed {
 
     @Override
     public String toString() {
-        return String.format("Snake: %s, feed: %s, color: %s, attack speed: %d", name, feed(), color(), getAttackSpeed());
+        return String.format("Snake: %s, feed: %s, color: %s, attack speed: %d, tongue length: %f", name, feed(), color(),
+                getAttackSpeed(), getTongueLenght());
+    }
+
+    @Override
+    public double getTongueLenght() {
+        return 0.2;
     }
 }

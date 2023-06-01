@@ -18,7 +18,8 @@ public class Spider extends Reptiles implements AttackSpeed {
     }
     @Override
     public String toString() {
-        return String.format("Spider: %s, feed: %s, color: %s, attack speed: %d", name, feed(), color(), getAttackSpeed());
+        return String.format("Spider: %s, feed: %s, color: %s, attack speed: %d", name, feed(), color(),
+                getAttackSpeed());
     }
 
     @Override
