@@ -8,6 +8,7 @@ public abstract class Reptiles {
     }
     public abstract String feed();
     public abstract String color();
+
     // добавитьь скорость бега, высота прыжка, длинна языка
 //    жители: хамелион мультиколор, змея желтая, лягушка зеленая
 }

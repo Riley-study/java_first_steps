@@ -19,6 +19,11 @@ public class Snake extends Reptiles implements AttackSpeed {
 
     @Override
     public int getAttackSpeed() {
-        return 80;
+        return 50;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Snake: %s, feed: %s, color: %s, attack speed: %d", name, feed(), color(), getAttackSpeed());
     }
 }

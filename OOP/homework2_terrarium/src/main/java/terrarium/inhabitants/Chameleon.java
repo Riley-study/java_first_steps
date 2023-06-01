@@ -1,6 +1,8 @@
 package terrarium.inhabitants;
 
-public class Chameleon extends Reptiles{
+import terrarium.AttackSpeed;
+
+public class Chameleon extends Reptiles implements AttackSpeed {
     public Chameleon(String name) {
         super(name);
     }
@@ -13,5 +15,14 @@ public class Chameleon extends Reptiles{
     @Override
     public String color() {
         return "multicolor";
+    }
+    @Override
+    public String toString() {
+        return String.format("Chameleon: %s, feed: %s, color: %s, attack speed: %d", name, feed(), color(), getAttackSpeed());
+    }
+
+    @Override
+    public int getAttackSpeed() {
+        return 25;
     }
 }
